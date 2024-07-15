@@ -73,7 +73,9 @@ class Actions extends StatelessWidget {
             ...switch (state) {
               TimerInitial() => [
                   FloatingActionButton(
-                    child: const Icon(Icons.play_arrow),
+                    backgroundColor:Colors.red,
+                    shape:CircleBorder(),
+                    child: const Icon(Icons.play_arrow,color: Colors.white,),
                     onPressed: () => context
                         .read<TimerBloc>()
                         .add(TimerStarted(duration: state.duration)),
@@ -81,13 +83,19 @@ class Actions extends StatelessWidget {
                 ],
               TimerRunInProgress() => [
                   FloatingActionButton(
-                    child: const Icon(Icons.pause),
+            backgroundColor:Colors.red,
+            shape:CircleBorder(),
+
+                    child: const Icon(Icons.pause,color: Colors.white,),
                     onPressed: () {
                       context.read<TimerBloc>().add(const TimerPaused());
                     },
                   ),
                   FloatingActionButton(
-                    child: const Icon(Icons.replay),
+                    shape:CircleBorder(),
+            backgroundColor:Colors.red,
+
+                    child: const Icon(Icons.replay,color: Colors.white,),
                     onPressed: () {
                       context.read<TimerBloc>().add(const TimerReset());
                     },
@@ -95,13 +103,19 @@ class Actions extends StatelessWidget {
                 ],
               TimerRunPause() => [
                   FloatingActionButton(
-                    child: const Icon(Icons.play_arrow),
+                    shape:CircleBorder(),
+                  backgroundColor:Colors.red,
+
+                    child: const Icon(Icons.play_arrow,color: Colors.white,),
                     onPressed: () {
                       context.read<TimerBloc>().add(const TimerResumed());
                     },
                   ),
                   FloatingActionButton(
-                    child: const Icon(Icons.replay),
+                    shape:CircleBorder(),
+            backgroundColor:Colors.red,
+
+                    child: const Icon(Icons.replay,color: Colors.white,),
                     onPressed: () {
                       context.read<TimerBloc>().add(const TimerReset());
                     },
@@ -109,7 +123,10 @@ class Actions extends StatelessWidget {
                 ],
               TimerRunComplete() => [
                   FloatingActionButton(
-                    child: const Icon(Icons.replay),
+                    shape:CircleBorder(),
+                  backgroundColor:Colors.red,
+
+                    child: const Icon(Icons.replay,color: Colors.white,),
                     onPressed: () {
                       context.read<TimerBloc>().add(const TimerReset());
                     },
